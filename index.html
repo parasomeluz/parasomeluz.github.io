@@ -61,6 +61,54 @@
             margin-top: 30px;
         }
 
+        label { 
+            font-weight: bold; 
+            color: #ddd; 
+            margin-top: 15px; 
+            display: block; 
+            font-size: 1.4em; 
+            text-shadow: 0px 0px 8px rgba(255, 165, 0, 0.7);
+        }
+
+        input, select, textarea { 
+            width: 100%; 
+            padding: 16px; 
+            margin-top: 8px; 
+            border: 2px solid #666; 
+            border-radius: 8px; 
+            background: #222; 
+            color: #fff; 
+            font-size: 1.2em; 
+            box-shadow: inset 0px 0px 5px #FFA500;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #FFA500;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+        }
+
+        .btn-submit, .btn-custom { 
+            width: 100%; 
+            padding: 16px; 
+            background: linear-gradient(45deg, #FFA500, #ff8c00);
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 1.4em; 
+            margin-top: 20px; 
+            cursor: pointer; 
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
+        }
+
+        .btn-submit:hover, .btn-custom:hover { 
+            background: linear-gradient(45deg, #ff8c00, #FFA500); 
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.9);
+        }
+
         .info-section { 
             display: flex; 
             justify-content: space-between; 
@@ -84,46 +132,6 @@
             background-blend-mode: overlay;
             background-color: rgba(26, 26, 26, 0.8);
             padding-bottom: 50px;
-        }
-
-        .package-basic { 
-            background-image: url('https://link_da_imagem_kit_simples.jpg'); 
-        }
-
-        .package-dj { 
-            background-image: url('https://link_da_imagem_kit_dj.jpg'); 
-        }
-
-        .package-band { 
-            background-image: url('https://link_da_imagem_kit_banda.jpg'); 
-        }
-
-        .package-item span { 
-            display: block; 
-            margin: 10px 0; 
-            padding: 5px; 
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 5px;
-        }
-
-        .btn-submit, .btn-custom { 
-            width: 100%; 
-            padding: 14px; 
-            background: linear-gradient(45deg, #FFA500, #ff8c00);
-            color: white; 
-            border: none; 
-            border-radius: 8px; 
-            font-size: 1.2em; 
-            margin-top: 20px; 
-            cursor: pointer; 
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
-        }
-
-        .btn-submit:hover, .btn-custom:hover { 
-            background: linear-gradient(45deg, #ff8c00, #FFA500); 
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(255, 140, 0, 0.9);
         }
 
         @keyframes glow {
@@ -177,34 +185,28 @@
         </form>
 
         <button class="btn-custom" onclick="window.location.href='montar-kit-personalizado.html'">Montar Kit Personalizado 🛠️</button>
-
-        <div class="info-section">
-            <div class="package-item package-basic">
-                <span><strong>Kit Simples:</strong></span>
-                <span>2 caixas ativas, 1 mesa analógica</span>
-                <span>5 microfones e 5 pedestais</span>
-                <span>Preço: 500 reais</span>
-            </div>
-            <div class="package-item package-dj">
-                <span><strong>Kit DJ:</strong></span>
-                <span>1 caixa ativa, 1 grave</span>
-                <span>1 mesa analógica</span>
-                <span>2 PAR LED, 1 máquina de fumaça</span>
-                <span>Preço: 400 reais</span>
-            </div>
-            <div class="package-item package-band">
-                <span><strong>Kit Banda:</strong></span>
-                <span>1 mesa digital de 24 canais</span>
-                <span>10 microfones e 10 pedestais</span>
-                <span>8 vias de fone, 2 sub de 18 ativo</span>
-                <span>2 médio de 15 ativo, 1 técnico disponível</span>
-                <span>Preço: 1.000,00 reais</span>
-            </div>
-        </div>
     </div>
 
     <script>
         function sendToWhatsApp() {
             const name = document.getElementById("name").value;
             const phone = document.getElementById("phone").value;
-            const eventDate
+            const eventDateTime = document.getElementById("eventDateTime").value;
+            const eventLocation = document.getElementById("eventLocation").value;
+            const packageSelected = document.getElementById("package").value;
+
+            const message = `👋 Olá, gostaria de solicitar um orçamento para o seguinte evento:\n\n` +
+                            `👤 *Nome:* ${name}\n` +
+                            `📞 *Telefone:* ${phone}\n` +
+                            `📅 *Data e Hora:* ${eventDateTime}\n` +
+                            `📍 *Local:* ${eventLocation}\n` +
+                            `🎶 *Pacote Escolhido:* ${packageSelected}\n\n` +
+                            `Por favor, entre em contato. Obrigado!`;
+
+            const whatsappUrl = `https://wa.me/5547997191945?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>
