@@ -5,20 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kit Personalizado - Pará Som e Iluminação</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { background: #1a1a1a; color: #fff; display: flex; flex-direction: column; align-items: center; padding: 40px; }
-        h1 { color: #FFA500; text-align: center; margin-bottom: 20px; font-size: 2.5em; }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: Arial, sans-serif; 
+        }
+        
+        body { 
+            background: #1a1a1a; 
+            color: #fff; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 20px; 
+            overflow-x: hidden;
+        }
 
-        .container { max-width: 800px; width: 100%; background: #333; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
-        label { font-weight: bold; color: #ddd; margin-top: 15px; display: block; font-size: 1.2em; }
-        input, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #666; border-radius: 4px; background: #222; color: #fff; font-size: 1em; }
+        h1 { 
+            color: #FFA500; 
+            text-align: center; 
+            margin-top: 20px; 
+            font-size: 3em; 
+            text-shadow: 0px 0px 15px #FFA500, 0px 0px 30px #FFA500, 0px 0px 45px #FFA500;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
 
-        .btn-submit { width: 100%; padding: 14px; background-color: #FFA500; color: white; border: none; border-radius: 5px; font-size: 1.2em; margin-top: 20px; cursor: pointer; transition: background-color 0.3s; }
-        .btn-submit:hover { background-color: #ff8c00; }
+        .container { 
+            max-width: 600px; 
+            width: 100%; 
+            background: #333; 
+            padding: 30px; 
+            border-radius: 12px; 
+            border: 4px solid #FFA500;
+            box-shadow: 0 0 20px #ff6700, 0 0 40px #ff8c00, 0 0 60px #ffb000;
+            animation: borderGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        label { 
+            font-weight: bold; 
+            color: #ddd; 
+            margin-top: 15px; 
+            display: block; 
+            font-size: 1.2em; 
+            text-shadow: 0px 0px 8px rgba(255, 165, 0, 0.7);
+        }
+
+        input, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            margin-top: 5px; 
+            border: 2px solid #666; 
+            border-radius: 6px; 
+            background: #222; 
+            color: #fff; 
+            font-size: 1em; 
+            box-shadow: inset 0px 0px 5px #FFA500;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #FFA500;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+        }
+
+        .btn-submit { 
+            width: 100%; 
+            padding: 14px; 
+            background: linear-gradient(45deg, #FFA500, #ff8c00);
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 1.2em; 
+            margin-top: 20px; 
+            cursor: pointer; 
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
+        }
+
+        .btn-submit:hover { 
+            background: linear-gradient(45deg, #ff8c00, #FFA500); 
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.9);
+        }
+
+        .logo-container { 
+            text-align: center; 
+            margin: 20px 0; 
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0px 0px 30px rgba(255, 165, 0, 0.7);
+        }
+
+        .logo-container img { 
+            width: 250px; 
+            border-radius: 50%; 
+            transition: transform 0.3s;
+        }
+
+        .logo-container img:hover { 
+            transform: scale(1.1); 
+            box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.9);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0px 0px 10px #FFA500, 0px 0px 20px #FFA500, 0px 0px 30px #ff8c00, 0px 0px 40px #ff6700;
+            }
+            to {
+                text-shadow: 0px 0px 20px #FFA500, 0px 0px 30px #ff8c00, 0px 0px 40px #ffb000;
+            }
+        }
+
+        @keyframes borderGlow {
+            from {
+                box-shadow: 0 0 20px #ff6700, 0 0 40px #ff8c00, 0 0 60px #ffb000;
+            }
+            to {
+                box-shadow: 0 0 30px #ff8c00, 0 0 50px #ffb000, 0 0 70px #ff6700;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <div class="logo-container">
+        <img src="imagens/Captura-de-tela-2024-10-30-231940.png" alt="Logo Pará Som e Iluminação">
+    </div>
     <h1>Monte seu Kit Personalizado 🛠️</h1>
 
     <div class="container">
@@ -47,11 +161,11 @@
             const other = document.getElementById("other").value || "Nenhum";
 
             const message = `👋 Olá, gostaria de solicitar um orçamento personalizado para o meu evento.\n\n` +
-                            `🔊 **Caixas de Som:** ${speakers}\n` +
-                            `🎤 **Microfones:** ${microphones}\n` +
-                            `💡 **Iluminação:** ${lighting}\n` +
-                            `📦 **Outros Itens:** ${other}\n\n` +
-                            `📞 Por favor, entre em contato. Obrigado!`;
+                            `🔊 *Caixas de Som:* ${speakers}\n` +
+                            `🎤 *Microfones:* ${microphones}\n` +
+                            `💡 *Iluminação:* ${lighting}\n` +
+                            `📦 *Outros Itens:* ${other}\n\n` +
+                            `Por favor, entre em contato. Obrigado!`;
 
             const whatsappUrl = `https://wa.me/5547997191945?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
