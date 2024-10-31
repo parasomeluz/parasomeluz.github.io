@@ -66,19 +66,19 @@
             color: #ddd; 
             margin-top: 15px; 
             display: block; 
-            font-size: 1.4em; 
+            font-size: 1.2em; 
             text-shadow: 0px 0px 8px rgba(255, 165, 0, 0.7);
         }
 
         input, select, textarea { 
             width: 100%; 
-            padding: 16px; 
-            margin-top: 8px; 
+            padding: 14px; 
+            margin-top: 5px; 
             border: 2px solid #666; 
-            border-radius: 8px; 
+            border-radius: 6px; 
             background: #222; 
             color: #fff; 
-            font-size: 1.2em; 
+            font-size: 1em; 
             box-shadow: inset 0px 0px 5px #FFA500;
             outline: none;
             transition: border 0.3s;
@@ -91,12 +91,12 @@
 
         .btn-submit, .btn-custom { 
             width: 100%; 
-            padding: 16px; 
+            padding: 14px; 
             background: linear-gradient(45deg, #FFA500, #ff8c00);
             color: white; 
             border: none; 
             border-radius: 8px; 
-            font-size: 1.4em; 
+            font-size: 1.2em; 
             margin-top: 20px; 
             cursor: pointer; 
             transition: transform 0.3s, box-shadow 0.3s;
@@ -110,28 +110,26 @@
         }
 
         .info-section { 
-            display: flex; 
-            justify-content: space-between; 
             margin-top: 40px; 
         }
 
         .package-item { 
-            width: 30%;
+            background: #2a2a2a; 
             padding: 20px; 
-            border-radius: 8px; 
-            color: #fff; 
-            text-align: center; 
+            margin: 15px 0; 
+            border-radius: 6px; 
+            color: #FFA500; 
             font-size: 1.2em; 
-            position: relative;
-            box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            background-color: rgba(26, 26, 26, 0.8);
-            padding-bottom: 50px;
+            border-left: 4px solid #FFA500;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+        }
+
+        .sound-image {
+            width: 100%; 
+            max-width: 800px; 
+            margin: 30px 0; 
+            border-radius: 10px; 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
         @keyframes glow {
@@ -156,7 +154,7 @@
 <body>
 
     <div class="logo-container">
-        <img src="imagens/Captura de tela 2024-10-30 231940.png" alt="Logo Pará Som e Iluminação">
+        <img src="imagens/Captura-de-tela-2024-10-30-231940.png" alt="Logo Pará Som e Iluminação">
     </div>
     <h1>Aluguel de Som e Iluminação</h1>
 
@@ -176,15 +174,21 @@
 
             <label for="package">Escolha o Pacote:</label>
             <select id="package" required>
-                <option value="Kit Simples">Kit Simples - 500 reais 🎶: Ideal para pequenas festas ou eventos de curta duração.</option>
-                <option value="Kit DJ">Kit DJ - 400 reais 🎉: Equipamento profissional para DJs, perfeito para festas animadas.</option>
-                <option value="Kit Banda">Kit Banda - 1.000,00 reais ✨: Equipamento completo para bandas, ideal para grandes eventos e shows.</option>
+                <option value="Kit Simples">Kit Simples - 500 reais 🎶</option>
+                <option value="Kit DJ">Kit DJ - 400 reais 🎉</option>
+                <option value="Kit Banda">Kit Banda - 1.000,00 reais ✨</option>
             </select>
 
             <button type="button" class="btn-submit" onclick="sendToWhatsApp()">Solicitar Orçamento 📲</button>
         </form>
 
-        <button class="btn-custom" onclick="window.location.href='montar-kit-personalizado.html'">Montar Kit Personalizado 🛠️</button>
+        <button class="btn-custom" onclick="window.location.href='kit_personalizado.html'">Montar Kit Personalizado 🛠️</button>
+
+        <div class="info-section">
+            <div class="package-item"><strong>Kit Simples:</strong> 2 caixas ativas, 1 mesa analógica, 5 microfones e 5 pedestais. Preço: 500 reais.</div>
+            <div class="package-item"><strong>Kit DJ:</strong> 1 caixa ativa, 1 grave, 1 mesa analógica, 2 PAR LED, 1 máquina de fumaça. Preço: 400 reais.</div>
+            <div class="package-item"><strong>Kit Banda:</strong> 1 mesa digital de 24 canais, 10 microfones, 10 pedestais, 8 vias de fone, 2 sub de 18 ativo, 2 médio de 15 ativo, 1 técnico disponível. Preço: 1.000,00 reais.</div>
+        </div>
     </div>
 
     <script>
