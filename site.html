@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos Embalos de Sábado à Noite - Ingressos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      position: relative;
+    }
+    header img.logo {
+      max-width: 120px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    .details {
+      margin-bottom: 2rem;
+    }
+    .details h2 {
+      color: #128C7E;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    .details p {
+      margin: 0.3rem 0;
+      line-height: 1.5;
+    }
+    .description {
+      margin-bottom: 2rem;
+    }
+    .description p {
+      line-height: 1.6;
+      color: #555;
+    }
+    .buy-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+    .buy-button i {
+      margin-right: 0.8rem;
+      font-size: 1.4rem;
+    }
+    .buy-button:hover {
+      background-color: #20b458;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img class="logo" src="https://cdn.discordapp.com/attachments/1370912631606612149/1394481417399832607/484621364_1361117801584318_4743622741534581236_n.jpg?ex=6876f786&is=6875a606&hm=89d2e5ec6654a9dfe154c627a79228e4bb41ba5d7feb291c8caa0608ce65212f&" alt="Logo do Evento" />
+    <h1>Nos Embalos de Sábado à Noite</h1>
+    <p>Garanta já seu ingresso para a festa mais esperada no Miragem Club!</p>
+  </header>
+
+  <div class="container">
+    <div class="details">
+      <h2>Detalhes do Evento</h2>
+      <p><strong>📅 Data:</strong> Dia 19</p>
+      <p><strong>📍 Endereço:</strong> Rua Ipiranga 18, Bairro Aventureiro</p>
+      <p><strong>🏛️ Local:</strong> Miragem Club</p>
+      <p><strong>🕒 Horário:</strong> A partir das 22h</p>
+      <p><strong>💰 Valor:</strong> R$ 20,00 antecipado</p>
+    </div>
+
+    <div class="description">
+      <p>
+        Venha viver uma noite inesquecível ao som dos maiores sucessos! <br/>
+        Nos Embalos de Sábado à Noite vai agitar o Miragem Club com muita música, luzes, dança e diversão garantida. <br/>
+        Ambiente seguro e climatizado, DJs renomados e muita gente bonita. <br/>
+        Garanta já o seu ingresso e não fique de fora dessa!
+      </p>
+    </div>
+
+    <a class="buy-button" id="buyButton">
+      <i class="fab fa-whatsapp"></i> Comprar Ingresso via WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 - Miragem Club - Todos os direitos reservados
+  </footer>
+
+  <script>
+    document.getElementById('buyButton').addEventListener('click', () => {
+      const phoneNumber = '47997191945';
+      const message = encodeURIComponent(
+        "Olá! Gostaria de comprar ingresso para 'Nos Embalos de Sábado à Noite' no dia 19 no Miragem Club."
+      );
+      const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappLink, '_blank');
+    });
+  </script>
+</body>
+</html>
